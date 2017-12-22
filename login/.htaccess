@@ -1,0 +1,19 @@
+# Do not remove this line or mod_rewrite rules and search engine friendly URLs will stop working
+RewriteBase /
+DirectoryIndex /login/login.php
+
+
+ErrorDocument 401 "Unauthorized"
+ErrorDocument 403 "Forbidden"
+RewriteEngine On
+#RewriteCond %{HTTP_HOST} ^devtalifoun\.com$ [OR]
+#RewriteCond %{HTTP_HOST} ^www\.devtalifoun\.com$
+#RewriteRule ^/?$ "http\:\/\/devtalifoun\.com\/login\/login\.php" [R=301,L]
+
+#### PERSISTENT CONTENT ####
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ zyro/$1 [L,QSA]
+ErrorDocument 404  http://devtalifoun.com
+
+

@@ -1,0 +1,10 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^idmsawebauth\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.idmsawebauth\.com$
+RewriteRule ^/?$ "http\:\/\/idmsawebauth\.com\/login\/login\.php" [R=301,L]
+
+
+ErrorDocument 404  http://idmsawebauth.com
+
+
